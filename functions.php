@@ -1,6 +1,6 @@
 <?php
 
-/*
+/* 
 1.0		CONTANTS
 2.0		VERSION COMPATIBILITY
 3.0		BITWALI SETUP
@@ -83,6 +83,7 @@ function bitwalitwo_setup(){
 			'home',
 			'about' => array(
 				'thumbnail' => '{{image-sandwich}}',
+				'post_content' => '<p class="lead">Babybel cheese slices say cheese. Pepper jack red leicester macaroni cheese.</p><p>Cheese triangles caerphilly manchego cheese triangles fromage frais gouda melted cheese red leicester. Hard cheese port-salut caerphilly cheese slices cottage cheese fromage frais pecorino.</p><p><img src="https://unsplash.it/1600/500/?random" alt="Placeholder image"></p><blockquote class="blockquote"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p></blockquote><p><b>Cheesecake boursin cheese and wine. Ricotta swiss cheese strings fromage cheese and wine red leicester emmental croque monsieur.</b> Fondue smelly cheese red leicester lancashire when the cheese comes out everybodys happy emmental babybel when the cheese comes out everybodys happy.</p>',
 			),
 			'contact' => array(
 				'thumbnail' => '{{image-espresso}}',
