@@ -10,7 +10,10 @@
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php //post_class( 'twentyseventeen-panel ' ); ?> >
+<?php 
 
+
+?>
 	<?php if ( has_post_thumbnail() ) :
 	die('thumnal in content front page');
 		$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'bitwalitwo-featured-image' );
@@ -46,6 +49,9 @@
 						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'bitwalitwo' ),
 						get_the_title()
 					) );
+					$test = get_theme_mod('testing_bitwali', 'testing defaukt val');
+					var_dump(get_theme_mod('testing_bitwali'));
+					echo $test;
 				?>
 			</div><!-- .entry-content -->
 

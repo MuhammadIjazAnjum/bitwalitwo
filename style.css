@@ -31,14 +31,19 @@
     clear: both;
     display: table;
 }
+body{
 
-#page {
-	background-color: orange;
+	background-color: purple;
+	padding: 30px;
 }
+/*#page {
+	background-color: orange;
+}*/
+
 /*	Top Navigation		*/
 
 
-	.navigation-top {
+/*	.navigation-top {
 		bottom: 0;
 		font-size: 14px;
 		font-size: 0.875rem;
@@ -48,18 +53,19 @@
 		width: 100%;
 		z-index: 3;
 	}
-	.navigation-top .wrap {
+*/
+/*	.navigation-top .wrap {
 		max-width: 1000px;
-		/* The font size is 14px here and we need 50px padding in ems */
-		padding: 0.75em 3.4166666666667em;
+*/		/* The font size is 14px here and we need 50px padding in ems */
+/*		padding: 0.75em 3.4166666666667em;
 	}
-
-	.navigation-top nav {
+*/
+/*	.navigation-top nav {
 		margin-left: -1.25em;
 	}
-
+*/
 /*Manin navigation*/
-.main-navigation {
+/*.main-navigation {
 		width: auto;
 	}
 
@@ -81,4 +87,29 @@
 	margin: 0;
 	padding: 0 1.5em;
 	text-align: left;
+}
+*/
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #eded78;
+   
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #dda858;
 }

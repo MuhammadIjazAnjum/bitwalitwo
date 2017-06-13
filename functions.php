@@ -83,7 +83,7 @@ function bitwalitwo_setup(){
 			'home',
 			'about' => array(
 				'thumbnail' => '{{image-sandwich}}',
-				'post_content' => '<p class="lead">Babybel cheese slices say cheese. Pepper jack red leicester macaroni cheese.</p><p>Cheese triangles caerphilly manchego cheese triangles fromage frais gouda melted cheese red leicester. Hard cheese port-salut caerphilly cheese slices cottage cheese fromage frais pecorino.</p><p><img src="https://unsplash.it/1600/500/?random" alt="Placeholder image"></p><blockquote class="blockquote"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p></blockquote><p><b>Cheesecake boursin cheese and wine. Ricotta swiss cheese strings fromage cheese and wine red leicester emmental croque monsieur.</b> Fondue smelly cheese red leicester lancashire when the cheese comes out everybodys happy emmental babybel when the cheese comes out everybodys happy.</p>',
+				
 			),
 			'contact' => array(
 				'thumbnail' => '{{image-espresso}}',
@@ -167,7 +167,7 @@ function bitwalitwo_setup(){
 
 }//end of function bitwalitwo_setup
 add_action( 'after_setup_theme', 'bitwalitwo_setup' );
-require get_parent_theme_file_path( 'custom-header.php' );
+
 
 
 // /*4.0	content width */
@@ -277,11 +277,56 @@ add_action( 'widgets_init', 'bitwalitwo_widgets_init' );
  	</style>
  <?php //}
 // add_action( 'wp_head', 'bitwali_colors_css_wrap' );
+function simple_customizer($wp_customize){
+	$wp_customize->add_section('bw_sid',array(
+					'title'=>__('Color','bitwalitwo'),
+					'description'=>'My Section on customizer',
 
-// /*10.0	Enqueue scripts and styles */
+	));
+	/*Backgroun color*/
+	$wp_customize->add_setting('background_colorr',array(
+		'default'=>$fff,
 
- 
+	));
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'background_colorr',array(
+		'label'=>__('label for backgrond color','bitwalitwo'),
+		'section'=>'bw_sid',
+		'settings'=>'background_colorr'
+		 )) );
 
+	/*Link color*/
+	$wp_customize->add_setting('link_color',array(
+		'default'=>$fff,
+
+	));
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'link_color',array(
+		'label'=>__('Change link color','bitwalitwo'),
+		'section'=>'bw_sid',
+		'settings'=>'link_color'
+		 )) );
+
+
+
+}
+
+//add_action( 'customize_register', 'simple_customizer' );
+
+function simple_css(){
+	?>
+	<style type="text/css">
+		body{
+			background-color: #<?php echo get_theme_mod('background_colorr');?>
+		}
+		li a{
+			color: <?php echo get_theme_mod('link_color');?>
+		}
+	</style>
+
+	<?php
+}
+//add_action('wp_head','simple_css');
+
+/*10.0	Enqueue scripts and styles */
  function bitwalitwo_scripts() {
 // 	// Add custom fonts, used in the main stylesheet.
 // 	// wp_enqueue_style( 'bitwalitwo-fonts', bitwalitwo_fonts_url(), array(), null );
@@ -394,10 +439,10 @@ add_action( 'widgets_init', 'bitwalitwo_widgets_init' );
 // 	return ( is_front_page() && ! is_home() );
 // }
 
-// /**
-//  * Implement the Custom Header feature.
-//  */
-// require get_parent_theme_file_path( '/includes/custom-header.php' );
+/**
+ * Implement the Custom Header feature.
+ */
+require get_parent_theme_file_path( 'custom-header.php' );
 // /**
 //  * SVG icons functions and filters.
 //  */
@@ -407,21 +452,21 @@ add_action( 'widgets_init', 'bitwalitwo_widgets_init' );
 //  */
 // // require get_parent_theme_file_path( '/inc/custom-header.php' );
 
-// /**
-//  * Custom template tags for this theme.
-//  */
-// require get_parent_theme_file_path( '/templates/template-tags.php' );
+/**
+ * Custom template tags for this theme.
+ */
+require get_parent_theme_file_path( 'template-tags.php' );
 
 // /**
 //  * Additional features to allow styling of the templates.
 //  */
 // require get_parent_theme_file_path( '/includes/addbody-classes.php' );
-// // require get_parent_theme_file_path( '/inc/template-functions.php' );
+ require get_parent_theme_file_path( 'template-functions.php' );
 
-// // /**
-// //  * Customizer additions.
-// //  */
-// require get_parent_theme_file_path( '/includes/customizer.php' );
+/**
+ * Customizer additions.
+ */
+require get_parent_theme_file_path( 'customizer.php' );
 
 // // /**
 // //  * SVG icons functions and filters.

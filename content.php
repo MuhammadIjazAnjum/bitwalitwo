@@ -42,6 +42,7 @@
 				
 				the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
 			} else {
+				
 				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			}
 		?>
@@ -62,6 +63,7 @@
 				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'bitwalitwo' ),
 				get_the_title()
 			) );
+
 
 			wp_link_pages( array(
 				'before'      => '<div class="page-links">' . __( 'Pages:', 'bitwalitwo' ),

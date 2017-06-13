@@ -28,25 +28,25 @@ get_header(); ?>
 
 		<?php
 		// Get each of our panels and show the post data.
-	// 	if ( 0 !== twentyseventeen_panel_count() || is_customize_preview() ) : // If we have pages to show.
+		if ( 0 !== bitwalitwo_panel_count() || is_customize_preview() ) : // If we have pages to show.
+			die('some thinsg is achin');
+			/**
+			 * Filter number of front page sections in Twenty Seventeen.
+			 *
+			 * @since Twenty Seventeen 1.0
+			 *
+			 * @param $num_sections integer
+			 */
+			$num_sections = apply_filters( 'bitwalitwo_front_page_sections', 4 );
+			global $bitwalitwocounter;
 
-	// 		/**
-	// 		 * Filter number of front page sections in Twenty Seventeen.
-	// 		 *
-	// 		 * @since Twenty Seventeen 1.0
-	// 		 *
-	// 		 * @param $num_sections integer
-	// 		 */
-	// 		$num_sections = apply_filters( 'twentyseventeen_front_page_sections', 4 );
-	// 		global $twentyseventeencounter;
+			// Create a setting and control for each of the sections available in the theme.
+			for ( $i = 1; $i < ( 1 + $num_sections ); $i++ ) {
+				$bitwalitwocounter = $i;
+				bitwalitwo_front_page_section( null, $i );
+			}
 
-	// 		// Create a setting and control for each of the sections available in the theme.
-	// 		for ( $i = 1; $i < ( 1 + $num_sections ); $i++ ) {
-	// 			$twentyseventeencounter = $i;
-	// 			twentyseventeen_front_page_section( null, $i );
-	// 		}
-
-	// endif; // The if ( 0 !== twentyseventeen_panel_count() ) ends here. ?>
+	endif; // The if ( 0 !== twentyseventeen_panel_count() ) ends here. ?>
 
 	</main><!-- #main -->
 </div><!-- #primary -->

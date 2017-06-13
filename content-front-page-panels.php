@@ -8,13 +8,14 @@
  * @version 1.0
  */
 
-global $twentyseventeencounter;
+global $bitwalitwocounter;
 
 ?>
 
-<article id="panel<?php echo $twentyseventeencounter; ?>" <?php post_class( 'twentyseventeen-panel ' ); ?> >
+<article id="panel<?php echo $bitwalitwocounter; ?>" <?php post_class( 'twentyseventeen-panel ' ); ?> >
 
 	<?php if ( has_post_thumbnail() ) :
+	die('bitwalitwocounter in conten front page panesls');
 		$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'twentyseventeen-featured-image' );
 
 		// Calculate aspect ratio: h / w * 100%.
